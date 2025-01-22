@@ -1,11 +1,11 @@
 import React from 'react';
-import Carousel from '../components/Carousel';
+import Carousel2 from '../components/Carousel2';
 
 function Services () {
     return (
         <>
     <div>Services</div>
-    <Carousel />
+    <Carousel2 />
     </>
     )
 }

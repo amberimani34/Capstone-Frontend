@@ -22,9 +22,12 @@ I'm always excited to take on new projects and collaborate with people who value
         </div>
         </div>
     <Carousel />
+    <div>
     <Link to='/services'>
             <div><h1>About The Business</h1></div>
             </Link>
+
+            </div>
     </>
     )
 }
