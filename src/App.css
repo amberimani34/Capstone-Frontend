@@ -7,6 +7,7 @@
   color: white;
   padding: 15px;
   font-size: 2em;
+  margin-bottom: 0;
 }
 
 .nav a {
@@ -18,4 +19,14 @@
   color: rgb(236, 152, 166);
   background-color: beige;
   text-decoration: none;
+}
+
+.top-background {
+  background-image: url('https://delivery.gettyimages.com/downloads/1421422160?k=20&e=VjNoMQKwW8mq9o28LdV7_GSrTpGRkTrFE3M2LKwx5tLV10-C9PpKz8SMw2xSQDlk9spZB3uBEIfN2PfWi_NgtwjXPBm7k7xasLVTvmsbBlc='); 
+  background-size: cover; 
+  background-position: center; 
+  height: 350px; 
+  width: 100%;
+  /* position: relative; */
+  margin-top: 0;
 }
