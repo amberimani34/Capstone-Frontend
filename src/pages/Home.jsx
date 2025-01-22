@@ -21,12 +21,16 @@ function Home (props) {
 I'm always excited to take on new projects and collaborate with people who value good design and organized living. If you're looking for a fresh perspective on your space, feel free to reach out—I would love to work with you!</p>
         </div>
         </div>
+        <h1>Testimonials</h1>
     <Carousel />
-    <div>
+    <div className='designer'>
+     <img className='business' src="https://images.pexels.com/photos/7045846/pexels-photo-7045846.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+        <div>
     <Link to='/services'>
             <div><h1>About The Business</h1></div>
             </Link>
-
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas alias magni earum nisi consequuntur, incidunt impedit laudantium optio asperiores id voluptatum. Ipsa excepturi perferendis dolores sed sequi labore ipsum porro!</p>
+            </div>
             </div>
     </>
     )
