@@ -7,9 +7,10 @@ const Carousel = () => {
 
   // List of images in the carousel
   const images = [
-    'https://via.placeholder.com/600x300?text=Image+1',
-    'https://via.placeholder.com/600x300?text=Image+2',
-    'https://via.placeholder.com/600x300?text=Image+3',
+    '/images/testimonial1a.jpg',
+    '/images/testimonial2.jpg',
+    '/images/testimonial3.jpg',
+    '/images/testimonial4.jpg',
   ];
 
   // Function to go to the next image

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 
+
 const Form = () => {
   // State to handle form inputs
   const [formData, setFormData] = useState({
@@ -28,9 +29,24 @@ const Form = () => {
     console.log('Form submitted:', formData);
   };
 
+//   const isConfirmed = window.confirm("Are you sure you want to book this?");
+
+//   if (isConfirmed) {
+//     // Handle form submission logic here
+//     alert('Your booking has been confirmed!');
+//     // You can add code here to submit the form data or process it further
+//   } else {
+//     alert('Booking was canceled.');
+//   }
+// };
+
+
+
+
+
   return (
     <div className="form-container">
-      <h2>Book Your Interior Design Service</h2>
+      <h2>Book Your Consultation</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>

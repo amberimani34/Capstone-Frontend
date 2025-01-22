@@ -78,14 +78,14 @@ const Dropdown = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="image">Room Image URL:</label>
+          <label htmlFor="image">Select Room Image:</label>
           <input
             type="url"
             id="image"
             name="image"
             value={newRoomType.image}
             onChange={handleInputChange}
-            placeholder="Enter image URL"
+            placeholder="Images"
             required
           />
         </div>

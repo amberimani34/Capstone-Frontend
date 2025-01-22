@@ -27,7 +27,6 @@
   background-position: center; 
   height: 350px; 
   width: 100%;
-  /* position: relative; */
   margin-top: 0;
 }
 
@@ -39,6 +38,7 @@
   margin-left: 0; 
   display: block; 
   margin-top: 25px;
+  padding-right: 5px;
 }
 
 .business {
@@ -48,7 +48,8 @@
   object-fit: cover; 
   margin-right: 0; 
   display: block; 
-  margin-bottom: 25px;
+  padding-bottom: 10px;
+  padding-right: 5px;
 }
 
 .designer {
@@ -61,7 +62,7 @@
 
 .carousel-container {
   position: relative;
-  width: 600px; /* Set the width of the carousel */
+  width: 600px; 
   margin: auto;
   overflow: hidden;
 }
@@ -70,16 +71,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px; /* Set the height of the carousel */
+  height: 300px; 
 }
 
 .carousel img {
-  width: 100%; /* Make sure the image fills the container */
+  width: 100%; 
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+.carousel2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; 
 }
 
-/* Styling for the navigation buttons */
+.carousel2 img {
+  width: 100%; 
+  height: auto;
+  border-radius: 20px;
+}
+
+
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -213,4 +226,156 @@ input, select {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-items-manager {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+h2, h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 85%;
+  margin-bottom: 20px;
+}
+
+.room-image-container {
+  margin-top: 20px;
+}
+
+.room-image-container h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.room-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 85%;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn, .delete-btn {
+  padding: 10px 20px;
+  background-color: pink;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.submit-btn:hover, .delete-btn:hover {
+  background-color: #505551;
+}
+
+.delete-btn {
+  background-color: hotpink;
+  margin-top: 20px;
+}
+
+.testimonial {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.heading1 {
+  text-decoration: underline;
+}
+
+.pricing {
+  display: block;
+}
+
+.services {
+  text-decoration: underline;
+}
+
+.block {
+  display: flex;
+}
+
+
+.servicestitle {
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.bedroomrate {
+  justify-content: left;
+}
+
+.livingroomrate {
+  justify-content: left;
+}
+
+.closetrate {
+  float: right;
+  margin-right: 30px;
+}
+
+.kitchenrate {
+  justify-content: left;
+}
+
+.otherrate {
+  float: right;
+  margin-bottom: 200px;
+  margin-right: 30px;
+}
+
+.servicesphotos {
+  width: 150px;
+  height: 100px;
+}
+
+.servicesphotoslong {
+  width: 125px;
+  height: 175px;
+}
+
+.h4block {
+  display: block;
+  margin-left: 10px;
 }

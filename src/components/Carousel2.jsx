@@ -7,9 +7,12 @@ const Carousel2 = () => {
 
   // List of images in the carousel
   const images = [
-    'https://via.placeholder.com/600x300?text=Image+1',
-    'https://via.placeholder.com/600x300?text=Image+2',
-    'https://via.placeholder.com/600x300?text=Image+3',
+    '/images/IMG_0930 (1).JPG',
+    '/images/IMG_0934 (1).JPG',
+    '/images/IMG_0935.JPG',
+    '/images/IMG_0937.JPG',
+    '/images/IMG_2864.JPG',
+    '/images/IMG_2868.JPG',
   ];
 
   // Function to go to the next image
@@ -29,7 +32,7 @@ const Carousel2 = () => {
       <button className="carousel-btn prev" onClick={prevImage}>
         &#10094;
       </button>
-      <div className="carousel">
+      <div className="carousel2">
         <img src={images[currentIndex]} alt={`carousel-${currentIndex}`} />
       </div>
       <button className="carousel-btn next" onClick={nextImage}>
