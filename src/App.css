@@ -30,3 +30,68 @@
   /* position: relative; */
   margin-top: 0;
 }
+
+.headshot {
+  border-radius: 50%; 
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover; 
+  margin-left: 0; 
+  display: block; 
+  margin-top: 25px;
+}
+
+.designer {
+  display: flex;
+}
+
+.text {
+  display: block;
+}
+
+.carousel-container {
+  position: relative;
+  width: 600px; /* Set the width of the carousel */
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Set the height of the carousel */
+}
+
+.carousel img {
+  width: 100%; /* Make sure the image fills the container */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Styling for the navigation buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
