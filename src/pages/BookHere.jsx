@@ -4,7 +4,9 @@ import Form from '../components/Form'
 function BookHere () {
     return (
         <>
+        <div className='background'>
         <Form />
+        </div>
         </>
     )
 }

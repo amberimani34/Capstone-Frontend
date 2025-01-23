@@ -24,24 +24,46 @@ const Form = () => {
 
   // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here, you can add your submission logic (e.g., send data to a backend)
+    // e.preventDefault();
     console.log('Form submitted:', formData);
   };
 
 //   const isConfirmed = window.confirm("Are you sure you want to book this?");
 
 //   if (isConfirmed) {
-//     // Handle form submission logic here
 //     alert('Your booking has been confirmed!');
-//     // You can add code here to submit the form data or process it further
 //   } else {
 //     alert('Booking was canceled.');
 //   }
 // };
 
 
+const [selectedDate, setSelectedDate] = useState('');
+const [selectedTime, setSelectedTime] = useState('');
 
+const handleDateChange = (e) => {
+  setSelectedDate(e.target.value);
+};
+
+const handleTimeChange = (e) => {
+  setSelectedTime(e.target.value);
+};
+
+const handleBookHereClick = () => {
+  // User has to select both date and time
+  if (selectedDate && selectedTime) {
+    // Once you click Book consultation now btn, the below will show in an alert
+    const isConfirmed = window.confirm(`You selected: Date - ${selectedDate}, Time - ${selectedTime}. Confirm your booking?`);
+  
+    if (isConfirmed) {
+      window.alert(`Your booking has been confirmed for ${selectedDate} at ${selectedTime}.`);
+    } else {
+      window.alert('Your booking was canceled.');
+    }
+  } else {
+    window.alert('Please select both a date and a time to confirm your booking.');
+  }
+};
 
 
   return (
@@ -112,8 +134,8 @@ const Form = () => {
             type="date"
             id="calendar"
             name="calendar"
-            value={formData.calendar}
-            onChange={handleChange}
+            value={selectedDate}
+            onChange={handleDateChange}
             required
           />
         </div>
@@ -124,14 +146,14 @@ const Form = () => {
             type="time"
             id="time"
             name="time"
-            value={formData.time}
-            onChange={handleChange}
+            value={selectedTime}
+            onChange={handleTimeChange}
             required
           />
         </div>
 
-        <button type="submit" className="submit-btn">
-          Book Here
+        <button onClick={handleBookHereClick} className="submit-btn">
+          Book Consultation Now!
         </button>
       </form>
     </div>
