@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Dropdown2 = () => {
-  // State to store the room items
-  const [roomItems, setRoomItems] = useState([
-    { name: 'Couch', image: 'https://images.pexels.com/photos/945669/pexels-photo-945669.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'Nightstand', image: 'https://images.pexels.com/photos/30336914/pexels-photo-30336914/free-photo-of-elegant-nightstand-with-lamp-and-water-bottles-in-dubai-hotel.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'Lamp', image: 'https://images.pexels.com/photos/279805/pexels-photo-279805.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'TV Stand', image: 'https://images.pexels.com/photos/9646741/pexels-photo-9646741.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  ]);
-
-  // State for selected room item
+  // Initial state is an empty array until data is fetched from the API
+  const [roomItems, setRoomItems] = useState([]);
   const [selectedRoom, setSelectedRoom] = useState(null);
-
-  // State for the form input (adding new room items)
   const [newRoom, setNewRoom] = useState({
     name: '',
     image: '',
   });
 
-  // Handle change in the dropdown selection
+  // Fetch room items from the backend 
+  useEffect(() => {
+    axios
+      .get('http://localhost:5001/api/roomitems')
+      .then((response) => {
+        if (Array.isArray(response.data)) {
+          setRoomItems(response.data); // Ensure the response is an array
+        } else {
+          console.error('Invalid response data', response.data);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching room types:', error);
+      });
+  }, []);
   const handleRoomChange = (e) => {
     const selected = roomItems.find(room => room.name === e.target.value);
     setSelectedRoom(selected);
   };
 
-  // Handle input changes for adding new room item
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewRoom({
@@ -34,7 +38,6 @@ const Dropdown2 = () => {
     });
   };
 
-  // Handle form submission to add new room item
   const handleAddRoom = (e) => {
     e.preventDefault();
     if (newRoom.name && newRoom.image) {
@@ -43,11 +46,10 @@ const Dropdown2 = () => {
     }
   };
 
-  // Handle deletion of a room item
   const handleDeleteRoom = (roomName) => {
     const updatedRoomItems = roomItems.filter(room => room.name !== roomName);
     setRoomItems(updatedRoomItems);
-    // Clear the selected room if it was deleted
+    // Take the room away once deleted
     setSelectedRoom(null);
   };
 

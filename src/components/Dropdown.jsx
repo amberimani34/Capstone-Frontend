@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Dropdown = () => {
-    const [selectedRoom, setSelectedRoom] = useState(null);
-    const [roomTypesData, setRoomTypesData] = useState([
-
-    { name: 'Living Room', image: 'https://images.pexels.com/photos/12742348/pexels-photo-12742348.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'Bedroom', image: 'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'Kitchen', image: 'https://images.pexels.com/photos/279648/pexels-photo-279648.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'Office', image: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600' },
-    { name: 'Closet', image: 'https://images.pexels.com/photos/5705490/pexels-photo-5705490.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  ]);
-
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [roomTypesData, setRoomTypesData] = useState([]); // Initialize as empty array
   const [newRoomType, setNewRoomType] = useState({
     name: '',
     image: '',
   });
+
+  // Fetch room types from the backend when the component mounts
+  useEffect(() => {
+    axios
+      .get('http://localhost:5001/api/roomtypes') // Adjust the URL to your backend
+      .then((response) => {
+        if (Array.isArray(response.data)) {
+          setRoomTypesData(response.data); // Ensure the response is an array
+        } else {
+          console.error('Invalid response data', response.data);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching room types:', error);
+      });
+  }, []); // Empty dependency array ensures this effect runs once when the component mounts
 
   const handleRoomChange = (event) => {
     const selectedRoomType = roomTypesData.find(room => room.name === event.target.value);
@@ -41,16 +50,20 @@ const Dropdown = () => {
 
   return (
     <div className="room-type-selector">
-      <h2>Select or Add a Room Type</h2>
+      <h2>Select a Room Type</h2>
 
       {/* Dropdown for selecting a room type */}
       <select onChange={handleRoomChange} defaultValue="">
         <option value="" disabled>Select a room type</option>
-        {roomTypesData.map((room, index) => (
-          <option key={index} value={room.name}>
-            {room.name}
-          </option>
-        ))}
+        {Array.isArray(roomTypesData) && roomTypesData.length > 0 ? (
+          roomTypesData.map((room, index) => (
+            <option key={index} value={room.name}>
+              {room.name}
+            </option>
+          ))
+        ) : (
+          <option disabled>No room types available</option>
+        )}
       </select>
 
       {/* Display the image of the selected room type */}
@@ -85,7 +98,7 @@ const Dropdown = () => {
             name="image"
             value={newRoomType.image}
             onChange={handleInputChange}
-            placeholder="Images"
+            placeholder="Image URL"
             required
           />
         </div>

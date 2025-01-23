@@ -11,7 +11,7 @@ function Services () {
     <div className='closetrate'>
         <h2 className='servicestitle'>Closet:</h2>
         <div className='block'>
-        <img className='servicesphotoslong' src="/images/IMG_4205.PNG" alt="closetphoto" />
+        <img className='servicesphotoslong' src="/images/IMG_5591.jpg" alt="closetphoto" />
         <div className='h4block'>
         <h4>Interior Design Hourly Rate $30</h4>
         <h4>Organization Hourly Rate $30</h4>

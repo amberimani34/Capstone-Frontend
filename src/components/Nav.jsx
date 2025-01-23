@@ -12,7 +12,7 @@ function Nav (props) {
             <Link to='/book'>
             <div>BOOK HERE</div>
             </Link>
-            <div>IMANI CAROLYN BEAUTY</div>
+            <div className='navtitle'>IMANI CAROLYN BEAUTY</div>
             <Link to='/design'>
             <div>DESIGN ROOM</div>
             </Link>

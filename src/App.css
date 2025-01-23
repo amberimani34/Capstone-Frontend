@@ -21,6 +21,10 @@
   text-decoration: none;
 }
 
+.navtitle {
+  color: hotpink;
+}
+
 .top-background {
   background-image: url('https://delivery.gettyimages.com/downloads/1421422160?k=20&e=VjNoMQKwW8mq9o28LdV7_GSrTpGRkTrFE3M2LKwx5tLV10-C9PpKz8SMw2xSQDlk9spZB3uBEIfN2PfWi_NgtwjXPBm7k7xasLVTvmsbBlc='); 
   background-size: cover; 
@@ -257,14 +261,23 @@ Dropdown select {
   margin-bottom: 20px;
 }
 
+Dropdown2 select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 85%;
+  margin-bottom: 20px;
+}
+
 .room-image-container {
   margin-top: 20px;
 }
 
-.room-image-container h3 {
+/* .room-image-container h3 {
   font-size: 22px;
   margin-bottom: 10px;
-}
+} */
 
 .room-image {
   width: 100%;
@@ -291,6 +304,30 @@ Dropdown label {
 }
 
 Dropdown input {
+  padding: 10px;
+  font-size: 16px;
+  width: 85%;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+Dropdown2 form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+Dropdown2 .form-group {
+  margin-bottom: 15px;
+}
+
+Dropdown2 label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+Dropdown2 input {
   padding: 10px;
   font-size: 16px;
   width: 85%;
@@ -389,4 +426,16 @@ Dropdown input {
   background-position: center;
   height: 100%; 
   width: 100%;
+}
+
+.room_type {
+  float: left;
+  width: 50%;
+  height: 400px;
+}
+
+.room_item {
+  float: right;
+  width: 50%;
+  height: 400px;
 }
